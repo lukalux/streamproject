@@ -36,4 +36,4 @@ class PermanentLink(models.Model):
     class Meta:
         verbose_name = "Permanent Link"
         verbose_name_plural = "Permanent Links"
-        ordering = ['modified_at']
+        ordering = ['name']

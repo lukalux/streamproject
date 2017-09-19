@@ -1,0 +1,51 @@
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+h1, h2 {
+    text-align: center;
+    color: antiquewhite;
+    font-weight: 200;
+}
+a {
+    outline: none;
+}
+table td,
+table td a {
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+}
+table td {
+    border: 1px solid gray;
+    background: rgba(0,0,0,0.9);
+    color: antiquewhite;
+    font-size: 24px;
+    font-weight: 200;
+}
+table tr td:last-child {
+    background: darkseagreen;
+}
+table tr td:last-child a {
+    font-weight: 300;
+    color: black;
+}
+    table tr td:last-child a:hover {
+        color: lightyellow;
+    }
+
+.refresh-button {
+    width: 30%;
+    margin: 30px auto 80px auto;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+}
+.refresh-button a {
+    text-decoration: none;
+}

@@ -3,24 +3,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Nogometni prijenosi</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style>
+        body {
+            background: url("{% static 'img/football-ground.jpg' %}");
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
 <div id="loading-screen" style="width:100%;height:100%;background: black;position: absolute;top:0;left:0;margin:0 auto;text-align:center;">
     <img src="{% static 'bars.gif' %}" style="width:20%;margin-top:10%;" />
     <h1 style="color:white;">Učitavanje prijenosa u tijeku...</h1>
 </div>
-<h1>Stream poveznice</h1>
+<div class="refresh-button">
+    <a href="{% url 'home' %}"><h1>Osvježi popis utakmica</h1></a>
+</div>
 <table>
-    {% for link in links %}
-        <tr>
-            <td>{{ link.name }}</td>
-            <td>{{ link.time }}</td>
-            <td><a href="{{ link.realLink }}">GLEDAJ UŽIVO</a></td>
-        </tr>
-    {% endfor %}
+    {% if links %}
+        {% for link in links %}
+            <tr>
+                <td>{{ link.name }}</td>
+                <td>{{ link.time }}</td>
+                <td><a href="{{ link.realLink }}">GLEDAJ UŽIVO</a></td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <h2>Trenutno nema omogućenih prijenosa.</h2>
+    {% endif %}
 </table>
-<h1>Stream programa</h1>
+<h1>Stream programa (sa reklamama, lošija kvaliteta)</h1>
 <table>
     {% for plink in plinks %}
         <tr>
